@@ -1,0 +1,18 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <img src="https://images.vexels.com/media/users/3/142847/isolated/preview/a39a1b865f6f0a05b95fc3946f5df9b9-wave-surfing-beach-logo-by-vexels.png" width="55" alt="" class="d-inline-block  my-0 mr-md-auto">
+
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="<%= home_path %>">Home</a>
+    <a class="p-2 text-dark" href="<%= about_path %>">About</a>
+    <a class="p-2 text-dark" href="<%= new_post_path %>">Create Post</a>
+
+    <% if current_user %>
+    <a class="p-2 text-dark"><span class ="text-info">Welcome, <%= current_user.username.capitalize %>!</span></a>
+    <a class="p-2 text-dark" href="<%= new_post_path %>"><%= link_to "Logout", "/logout", method: :delete, class: "item" %></a>
+    <% else %>
+    <a href=""><%= link_to "Sign Up", signup_path, class: "item" %></a>
+    <a href=""><%= link_to "Login", login_path, class: "item" %></a>
+            <% end %>
+</div>
+
+  </nav>

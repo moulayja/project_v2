@@ -1,0 +1,21 @@
+<% @title="You're welcome to our surfing blog" %>
+
+<h2 class="title text-info font-italic">Surfing Blog Posts</h2>
+<br>
+
+
+<div class="hero-unit">
+<% @posts.each do |post| %>
+  <h4 class = "text-dark"><%= post.title.titleize  %>
+  <span class="badge badge-warning">New</span></h4>
+  <p class= "text-secondary"><%= post.content.capitalize%></p>
+  <p>
+    <a class="btn btn-primary btn-large" href="<%= post_path(post) %>">
+      Learn more
+    </a>
+  </p>
+  <% end %>
+</div>
+
+
+

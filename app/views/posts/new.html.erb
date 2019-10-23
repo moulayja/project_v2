@@ -1,0 +1,34 @@
+<% @title="Surfing// Redefined: New Post" %>
+
+<h2 class="title text-info font-italic ">Add Post</h2>
+
+    <%= form_for @post, url: posts_path do |f| %>
+      <% if @post.errors.any? %>
+       <% @post.errors.full_messages.each do |msg|%>
+         <div class="alert alert-danger"><%= msg %></div>
+          <% end %>
+
+
+
+
+
+
+
+    <% end %>  
+<br> 
+      
+      
+      
+      <%= f.label :Title %>:
+        <%= f.text_field :title, {:class => "form-control"} %><br />
+      
+        <%= f.label :Content %>:
+        <%= f.text_area :content, {:class => "form-control"} %><br />
+
+        <%= f.label :category_id %>:
+        <%= f.collection_select :category_id, @categories, :id, :name %><br>
+        
+        <%= f.submit({:class => "btn btn-primary"})%>
+      <% end %>
+
+

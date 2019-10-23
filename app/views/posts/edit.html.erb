@@ -1,0 +1,23 @@
+<% @title="Surfing// Redefined :Edit Post" %>
+<h2 class="title text-info font-italic ">Edit Post</h2>
+
+    <%= form_for @post, url: post_path, method: :patch do |f| %>
+      <% if @post.errors.any? %>
+       <% @post.errors.full_messages.each do |msg|%>
+         <div class="alert alert-danger"><%= msg %></div>
+          <% end %>
+    <% end %>  
+<br> 
+      
+      
+      
+      <%= f.label :Title %>:
+        <%= f.text_field :title, {:class => "form-control"} %><br />
+      
+        <%= f.label :Content %>:
+        <%= f.text_area :content, {:class => "form-control"} %><br />
+      
+        <%= f.submit({:class => "btn btn-primary"})%>
+      <% end %>
+
+
