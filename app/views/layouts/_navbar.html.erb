@@ -10,8 +10,8 @@
     <a class="p-2 text-dark"><span class ="text-info">Welcome, <%= current_user.username.capitalize %>!</span></a>
     <a class="p-2 text-dark" href="<%= new_post_path %>"><%= link_to "Logout", "/logout", method: :delete, class: "item" %></a>
     <% else %>
-    <a href=""><%= link_to "Sign Up", signup_path, class: "item" %></a>
-    <a href=""><%= link_to "Login", login_path, class: "item" %></a>
+    <a href=""><%= link_to "/Sign Up", signup_path, class: "item" %></a>&nbsp
+    <a href=""><%= link_to "/Login", login_path, class: "item" %></a>
             <% end %>
 </div>
 

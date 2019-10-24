@@ -11,8 +11,14 @@ class ApplicationController < ActionController::Base
 
   def authorize
     redirect_to '/login' if current_user.nil?
-end
+  end
+
+  def log_in(user)
+    session[:user_id] = user.id
+  end
+
 helper_method :current_user
 helper_method :authorize
+helper_method :log_in
 
 end
