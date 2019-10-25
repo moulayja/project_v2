@@ -1,21 +1,27 @@
-<% @title="You're welcome to our surfing blog" %>
 
-<h2 class="title text-info font-italic">Surfing Blog Posts</h2>
+<% @title="You're welcome to Gamalino's News " %>
+
 <br>
-
-
-<div class="hero-unit">
+<h2 id="article_title" >Recent Articles</h2>
+<br>
 <% @posts.each do |post| %>
-  <h4 class = "text-dark"><%= post.title.titleize  %>
-  <span class="badge badge-warning">New</span></h4>
-  <p class= "text-secondary"><%= post.content.capitalize%></p>
-  <p>
-    <a class="btn btn-primary btn-large" href="<%= post_path(post) %>">
-      Learn more
-    </a>
-  </p>
-  <% end %>
-</div>
+  <div class="card" id="articles_bg">
+    <div class="card-header" class="container">
+      <span id="category"><%=post.category.name %></span><br>
+    </div>
 
 
+    <div class="container">
+    <div class="container">
+    <div class="card-body">
+      <h5 class="card-title" id="article_titles"><%= post.title.titleize  %></h5>
+      <p class="text-secondary card-text"><%= truncate(post.content.capitalize, :length => 500) %></p>
+      <a href="<%= post_path(post) %>" class="btn btn-outline-secondary">Read more</a><br>
+    </div >
+    </div>
+    </div>
+
+
+    </div>
+      <% end %>
 

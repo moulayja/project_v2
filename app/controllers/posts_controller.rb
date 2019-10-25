@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
     before_action :authorize, only: [:edit, :destroy, :create, :new]
     
     def index
@@ -30,6 +31,8 @@ class PostsController < ApplicationController
 
     def edit
         @post = Post.find(params[:id])
+        @categories = Category.all
+
     end
 
 

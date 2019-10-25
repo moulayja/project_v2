@@ -13,5 +13,4 @@ Category.create(name: "Lifestyle")
 
 
 
-
-puts "seeded"
+puts "seeded"       

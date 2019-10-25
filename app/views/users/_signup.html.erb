@@ -1,0 +1,22 @@
+
+<div id="signup" class="container">
+<div class ="form-group row container" id="signup-form">
+<%= form_for @user do |f| %>
+
+    <%= f.label :username, {:class => "form-group "} %>
+    <%= f.text_field :username, {:class => "form-control input-xl col-xs-4 center"}  %>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password, {:class => "form-control input-xl col-xs-4 center"} %>
+    <br>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, {:class => "form-control input-xl col-xs-4 center"}  %>
+    <br>
+    <%= f.submit({:class => "btn btn-secondary"})%>
+<% end %>
+</div>
+</div>
+
+
+
+

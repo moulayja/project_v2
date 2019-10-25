@@ -1,5 +1,7 @@
-<% @title="Surfing// Redefined :Edit Post" %>
-<h2 class="title text-info font-italic ">Edit Post</h2>
+<% @title="Gamalino's News :Edit Post" %>
+<div class ="block container" id="add-post">
+<div class = "for_space container"><br><br>
+<h2 class="title font-italic" id="pink" >Edit Post</h2>
 
     <%= form_for @post, url: post_path, method: :patch do |f| %>
       <% if @post.errors.any? %>
@@ -16,8 +18,15 @@
       
         <%= f.label :Content %>:
         <%= f.text_area :content, {:class => "form-control"} %><br />
-      
-        <%= f.submit({:class => "btn btn-primary"})%>
+        
+        <div class = "dropdown">
+        <%= f.label :category_id, {:class => "dd-control"} %>
+        <%= f.collection_select :category_id, @categories, :id, :name%>
+        </div>
+
+        <%= f.submit({:class => "btn btn-secondary"})%>
       <% end %>
-
-
+<br>
+<br>
+</div>
+</div>
