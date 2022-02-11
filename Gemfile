@@ -9,7 +9,7 @@ gem 'sqlite3', '~> 1.3.6'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-gem 'puma', '~> 3.4'
+gem 'puma', '~> 4.3'
 gem 'bulma-rails', '~> 0.7.5'
 
 gem 'faker', '~> 1.6', '>= 1.6.6'
